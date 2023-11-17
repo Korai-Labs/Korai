@@ -167,7 +167,7 @@ static DialogMessageButton fw_version_screen(DialogsApp* dialogs, DialogMessage*
 const AboutDialogScreen about_screens[] = {
     product_screen,
     compliance_screen,
-    address_screen,
+    info_screen,
     icon1_screen,
     icon2_screen,
     hw_version_screen,
