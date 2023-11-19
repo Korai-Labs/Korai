@@ -38,3 +38,12 @@
 [submodule "lib/stm32wb_copro"]
 	path = lib/stm32wb_copro
 	url = https://github.com/flipperdevices/stm32wb_copro.git
+[submodule "applications/ble-spam"]
+	path = applications/ble-spam
+	url = https://github.com/noproto/ble_spam_ofw
+[submodule "applications/ble-spam-apple"]
+	path = applications/ble-spam-apple
+	url = https://github.com/noproto/apple_ble_spam_ofw
+[submodule "applications/flipnested"]
+	path = applications/flipnested
+	url = https://github.com/AloneLiberty/FlipperNestedRecovery
