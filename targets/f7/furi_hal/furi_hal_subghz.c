@@ -341,13 +341,13 @@ uint8_t furi_hal_subghz_get_lqi() {
      if(!(value >= 299999755 && value <= 348000335) &&
         !(value >= 386999938 && value <= 464000000) &&
         !(value >= 778999847 && value <= 928000000) &&
-        !(is_extended)) {
+        !(extended)) {
         FURI_LOG_I(TAG, "Frequency blocked - outside standard range");
          return false;
      } else if(!(value >= 281000000 && value <= 361000000) &&
         !(value >= 378000000 && value <= 481000000) &&
         !(value >= 749000000 && value <= 962000000) &&
-        is_extended) {
+        extended) {
         FURI_LOG_I(TAG, "Frequency blocked - outside extended range");
          return false;
      }
