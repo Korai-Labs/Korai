@@ -8,7 +8,7 @@
 #include <furi_hal_interrupt.h>
 #include <furi_hal_resources.h>
 #include <furi_hal_bus.h>
-
+#include <flipper_format.h>
 #include <stm32wbxx_ll_dma.h>
 
 #include <furi.h>
