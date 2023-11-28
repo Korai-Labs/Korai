@@ -29,7 +29,7 @@ COPRO_CUBE_DIR = "lib/stm32wb_copro"
 # Default radio stack
 COPRO_STACK_BIN = "stm32wb5x_BLE_Stack_light_fw.bin"
 # Firmware also supports "ble_full", but it might not fit into debug builds
-COPRO_STACK_TYPE = "ble_light"
+COPRO_STACK_TYPE = "ble_ligh"
 
 # Leave 0 to let scripts automatically calculate it
 COPRO_STACK_ADDR = "0x0"
