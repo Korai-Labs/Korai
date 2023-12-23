@@ -44,9 +44,9 @@ static DialogMessageButton info_screen(DialogsApp* dialogs, DialogMessage* messa
     DialogMessageButton result;
 
     const char* screen_text = "Korai Fimrware\n"
-                              "Unchain your device\n"
+                              "Unchain your Flipper!\n"
                               "source at:\n"
-                              "github.com/korai-labs/kora\n";
+                              "github.com/korai-labs/korai\n";
 
     dialog_message_set_text(message, screen_text, 0, 0, AlignLeft, AlignTop);
     result = dialog_message_show(dialogs, message);
