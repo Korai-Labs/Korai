@@ -38,13 +38,13 @@ static DialogMessageButton about_screen_product(DialogsApp* dialogs, DialogMessa
     return result;
 }
 
-static DialogMessageButton about_screen_address(DialogsApp* dialogs, DialogMessage* message) {
+static DialogMessageButton info_screen(DialogsApp* dialogs, DialogMessage* message) {
     DialogMessageButton result;
 
-    const char* screen_text = "Flipper Devices Inc\n"
-                              "Suite B #551, 2803\n"
-                              "Philadelphia Pike, Claymont\n"
-                              "DE, USA 19703\n";
+    const char* screen_text = "Korai Fimrware\n"
+                              "Unchain your Flipper!\n"
+                              "source at:\n"
+                              "github.com/korai-labs/korai\n";
 
     dialog_message_set_text(message, screen_text, 0, 0, AlignLeft, AlignTop);
     result = dialog_message_show(dialogs, message);
@@ -196,7 +196,7 @@ static DialogMessageButton about_screen_fw_version(DialogsApp* dialogs, DialogMe
 const AboutDialogScreen about_screens[] = {
     about_screen_product,
     about_screen_compliance,
-    about_screen_address,
+    info_screen,
     about_screen_icon1,
     about_screen_icon2,
     about_screen_cert_china_0,
