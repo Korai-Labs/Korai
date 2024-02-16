@@ -146,8 +146,6 @@ App(
     sources=["plugins/supported_cards/gallagher.c"],
 )
 
-)
-
 App(
     appid="microel_parser",
     apptype=FlipperAppType.PLUGIN,
