@@ -16,8 +16,8 @@ jobs:
     - name: Upload prod artifact (TAR)
       uses: actions/upload-artifact@v2
       with:
-        name: flipper-z-f7-update-Korai.tgz
-        path: dist/f7-C/flipper-z-f7-update-Korai.tgz
+        name: update.tgz
+        path: dist/f7-*/*.tgz
     - name: Upload log 
       uses: actions/upload-artifact@v2
       with:
