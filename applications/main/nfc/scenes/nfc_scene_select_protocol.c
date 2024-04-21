@@ -29,6 +29,8 @@ void nfc_scene_select_protocol_on_enter(void* context) {
             "%s %s",
             prefix,
             nfc_device_get_protocol_name(instance->protocols_detected[i]));
+
+        furi_string_replace_str(temp_str, "Mifare", "MIFARE");
         submenu_add_item(
             submenu,
             furi_string_get_cstr(temp_str),
@@ -55,6 +57,11 @@ bool nfc_scene_select_protocol_on_event(void* context, SceneManagerEvent event) 
         scene_manager_set_scene_state(
             instance->scene_manager, NfcSceneSelectProtocol, event.event);
         consumed = true;
+    } else if(event.type == SceneManagerEventTypeBack) {
+        if(scene_manager_has_previous_scene(instance->scene_manager, NfcSceneDetect)) {
+            consumed = scene_manager_search_and_switch_to_previous_scene(
+                instance->scene_manager, NfcSceneStart);
+        }
     }
     return consumed;
 }

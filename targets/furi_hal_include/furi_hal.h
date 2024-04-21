@@ -12,9 +12,9 @@ struct STOP_EXTERNING_ME {};
 
 #include <furi_hal_cortex.h>
 #include <furi_hal_clock.h>
+#include <furi_hal_adc.h>
 #include <furi_hal_bus.h>
 #include <furi_hal_crypto.h>
-#include <furi_hal_console.h>
 #include <furi_hal_debug.h>
 #include <furi_hal_dma.h>
 #include <furi_hal_os.h>
@@ -36,7 +36,8 @@ struct STOP_EXTERNING_ME {};
 #include <furi_hal_usb.h>
 #include <furi_hal_usb_hid.h>
 #include <furi_hal_usb_ccid.h>
-#include <furi_hal_uart.h>
+#include <furi_hal_serial_control.h>
+#include <furi_hal_serial.h>
 #include <furi_hal_info.h>
 #include <furi_hal_random.h>
 #include <furi_hal_target_hw.h>
@@ -46,13 +47,13 @@ extern "C" {
 #endif
 
 /** Early FuriHal init, only essential subsystems */
-void furi_hal_init_early();
+void furi_hal_init_early(void);
 
 /** Early FuriHal deinit */
-void furi_hal_deinit_early();
+void furi_hal_deinit_early(void);
 
 /** Init FuriHal */
-void furi_hal_init();
+void furi_hal_init(void);
 
 /** Transfer execution to address
  *
