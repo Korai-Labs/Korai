@@ -323,7 +323,18 @@ float furi_hal_subghz_get_rssi(void) {
     } else {
         rssi = (rssi / 2.0f) - 74.0f;
     }
-    
+
+    return rssi;
+}
+
+uint8_t furi_hal_subghz_get_lqi(void) {
+    furi_hal_spi_acquire(&furi_hal_spi_bus_handle_subghz);
+    uint8_t data[1];
+    cc1101_read_reg(&furi_hal_spi_bus_handle_subghz, CC1101_STATUS_LQI | CC1101_BURST, data);
+    furi_hal_spi_release(&furi_hal_spi_bus_handle_subghz);
+    return data[0] & 0x7F;
+}
+
 bool furi_hal_subghz_is_frequency_valid(uint32_t value) {
     if(!(value >= 299999755 && value <= 348000335) &&
        !(value >= 386999938 && value <= 464000000) &&
@@ -345,17 +356,6 @@ uint32_t furi_hal_subghz_set_frequency_and_path(uint32_t value) {
     } else {
         furi_crash("SubGhz: Incorrect frequency during set.");
     }
-    return rssi;
-}
-
-uint8_t furi_hal_subghz_get_lqi(void) {
-    furi_hal_spi_acquire(&furi_hal_spi_bus_handle_subghz);
-    uint8_t data[1];
-    cc1101_read_reg(&furi_hal_spi_bus_handle_subghz, CC1101_STATUS_LQI | CC1101_BURST, data);
-    furi_hal_spi_release(&furi_hal_spi_bus_handle_subghz);
-    return data[0] & 0x7F;
-}
-
     return value;
 }
 
