@@ -55,11 +55,6 @@ static DialogMessageButton about_screen_address(DialogsApp* dialogs, DialogMessa
     return result;
 }
 
-    dialog_message_set_text(message, screen_text, 0, 0, AlignLeft, AlignTop);
-    result = dialog_message_show(dialogs, message);
-
-    return result;
-}
 
 static DialogMessageButton about_screen_icon1(DialogsApp* dialogs, DialogMessage* message) {
     DialogMessageButton result;
