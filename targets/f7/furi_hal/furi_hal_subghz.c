@@ -343,20 +343,7 @@ uint8_t furi_hal_subghz_get_lqi(void) {
 
  bool furi_hal_subghz_is_frequency_valid(uint32_t value) {
      FURI_LOG_I(TAG, "Checking if frequency is valid");
-     bool extended = false;
-
-     Storage* storage = furi_record_open("storage");
-     FlipperFormat* fff_data_file = flipper_format_file_alloc(storage);
-
-     if(flipper_format_file_open_existing(fff_data_file, "/ext/subghz/assets/extend")) {
-         flipper_format_read_bool(fff_data_file, "use_ext_range_at_own_risk", &extended, 1);
-         FURI_LOG_I(TAG, "Using extended frequencies at your own risk");
-     } else{
-        FURI_LOG_I(TAG, "Keeping standard frequency ranges");
-     }
-
-     flipper_format_free(fff_data_file);
-     furi_record_close("storage");
+     bool extended = true;
 
 
  // No flag - test original range, flag set, test extended range
