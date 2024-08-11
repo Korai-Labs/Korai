@@ -44,23 +44,16 @@ static DialogMessageButton about_screen_product(DialogsApp* dialogs, DialogMessa
 static DialogMessageButton about_screen_address(DialogsApp* dialogs, DialogMessage* message) {
     DialogMessageButton result;
 
-    const char* screen_text = "Flipper Devices Inc.\n"
-                              "Suite B #551, 2803\n"
-                              "Philadelphia Pike, Claymont\n"
-                              "DE, USA 19703\n";
+    const char* screen_text = "Korai Firmware \n"
+                              "Another one\n"
+                              "Or maybe not\n"
+                              "See for yourself\n";
 
     dialog_message_set_text(message, screen_text, 0, 0, AlignLeft, AlignTop);
     result = dialog_message_show(dialogs, message);
 
     return result;
 }
-
-static DialogMessageButton about_screen_compliance(DialogsApp* dialogs, DialogMessage* message) {
-    DialogMessageButton result;
-
-    const char* screen_text = "For all compliance\n"
-                              "certificates, please visit:\n"
-                              "www.flipp.dev/compliance";
 
     dialog_message_set_text(message, screen_text, 0, 0, AlignLeft, AlignTop);
     result = dialog_message_show(dialogs, message);
@@ -198,7 +191,6 @@ static DialogMessageButton about_screen_fw_version(DialogsApp* dialogs, DialogMe
 
 const AboutDialogScreen about_screens[] = {
     about_screen_product,
-    about_screen_compliance,
     about_screen_address,
     about_screen_icon1,
     about_screen_icon2,
